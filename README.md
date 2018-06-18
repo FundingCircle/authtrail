@@ -71,6 +71,23 @@ We recommend using this in addition to Devise’s `Lockable` module and [Rack::A
 
 Works with Rails 5+
 
+### Working with Rails 4
+
+In order to get the code working in rails 4 the following class need to be defined:
+
+```
+class ApplicationJob
+  include Sidekiq::Worker
+end
+```
+
+```
+class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
+end
+```
+
+
 ## History
 
 View the [changelog](https://github.com/ankane/authtrail/blob/master/CHANGELOG.md)
