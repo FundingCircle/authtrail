@@ -1,5 +1,4 @@
 require "geocoder"
-require "rails"
 require "warden"
 require "auth_trail/engine"
 require "auth_trail/manager"
