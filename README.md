@@ -78,6 +78,10 @@ In order to get the code working in rails 4 the following class need to be defin
 ```
 class ApplicationJob
   include Sidekiq::Worker
+
+  def self.perform_later(*args)
+    perform_async(*args)
+  end
 end
 ```
 
@@ -87,6 +91,7 @@ class ApplicationRecord < ActiveRecord::Base
 end
 ```
 
+and remove the `, optional: true` from the generated model. 
 
 ## History
 
