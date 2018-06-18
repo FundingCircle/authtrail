@@ -6,9 +6,10 @@ require "auth_trail/version"
 
 module AuthTrail
   class << self
-    attr_accessor :exclude_method, :geocode, :track_method
+    attr_accessor :exclude_method, :geocode, :track_method, :identity_fieldname
   end
   self.geocode = true
+  self.identity_fieldname = :email
 
   def self.track(strategy:, scope:, identity:, success:, request:, user: nil, failure_reason: nil)
     info = {

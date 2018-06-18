@@ -26,7 +26,7 @@ module AuthTrail
         AuthTrail.safely do
           if opts[:message]
             request = ActionDispatch::Request.new(env)
-            identity = request.params[opts[:scope]] && request.params[opts[:scope]][:email] rescue nil
+            identity = request.params[opts[:scope]] && request.params[opts[:scope]][AuthTrail.identity_fieldname] rescue nil
 
             AuthTrail.track(
               strategy: "database_authenticatable",
