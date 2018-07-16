@@ -65,6 +65,12 @@ Set job queue for geocoding
 AuthTrail::GeocodeJob.queue_as :low
 ```
 
+Using a non-standard devise user identifier
+
+```
+AuthTrain.identity_fieldname = :username
+```
+
 ## Other Notes
 
 We recommend using this in addition to Devise’s `Lockable` module and [Rack::Attack](https://github.com/kickstarter/rack-attack).
